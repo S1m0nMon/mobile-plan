@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-Mobile | Student Plans</title>
+  <meta name="description" content="Affordable high-speed mobile plans for international students in Korea." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJW7PTWQ8C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-VJW7PTWQ8C');
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div class="logo">K-Mobile</div>
+      <div class="lang-switcher" id="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中</button>
+        <button class="lang-btn" data-lang="vi">VN</button>
+        <button class="lang-btn" data-lang="ko">KR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="semester-banner" class="semester-banner">
+      🌸 New Semester Special Offer
+    </div>
+
+    <div class="lowest-price-guarantee-box">
+      <div>
+        <h4 id="lp-badge">100% Lowest Price Guarantee</h4>
+        <p id="lp-reason">Full refund if not the lowest price</p>
+      </div>
+      <span class="lowest-tag">LOWEST</span>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="youth">Youth</button>
+    </div>
+
+    <div class="info-banner">
+      <div class="info-icon">🚀</div>
+      <div class="info-content">
+        <h3 id="info-banner-title">Express Delivery & Pickup</h3>
+        <p id="info-banner-desc">Airport pickup available.</p>
+      </div>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+      <!-- Populated by JS -->
+    </div>
+  </main>
+
+  <!-- Detailed Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-inner">
+        <section class="modal-header-section">
+          <h2 id="modal-header-title">Get your number for immigration</h2>
+          <p id="modal-subtitle">Activation support available</p>
+        </section>
+
+        <div class="pricing-display">
+          <div class="original-price-box">
+            <span id="modal-original-price">68,000₩</span>/mo
+            <span class="arrow-down">↓</span>
+          </div>
+          <div class="discounted-price-box">
+            <p class="guarantee-term" id="modal-guarantee">Lowest price for 12 mo.</p>
+            <div class="final-price-text"><span id="modal-current-price">29,000₩</span>/mo</div>
+          </div>
+        </div>
+
+        <div class="info-banner" style="margin-top: 24px; padding: 16px; border: none; background: #fbfbfb;">
+          <div style="flex:1;">
+            <p style="font-size: 0.75rem; color: #bdc3c7;" id="label-summary">Data / Call / SMS</p>
+            <p style="font-weight: 800; font-size: 1.1rem;" id="modal-summary-data">95GB</p>
+          </div>
+          <div style="flex:1; text-align: right;">
+            <p style="font-size: 0.75rem; color: #bdc3c7;" id="label-spam">Spam Shield</p>
+            <p style="font-weight: 800; font-size: 1.1rem; color: #4f46e5;" id="label-applied">Applied</p>
+          </div>
+        </div>
+
+        <div class="modal-tabs">
+          <button class="tab-btn active" data-tab="benefits" id="tab-label-benefits">Benefits</button>
+          <button class="tab-btn" data-tab="details" id="tab-label-details">Plan Specs</button>
+        </div>
+
+        <div id="tab-benefits" class="tab-content active">
+          <div class="benefit-item">
+            <div class="benefit-icon-container">🏢</div>
+            <div class="benefit-texts">
+              <h4 id="f1-title">Exclusive Discount</h4>
+              <p id="f1-desc">Save with student benefits</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon-container">🛡️</div>
+            <div class="benefit-texts">
+              <h4 id="f2-title">Phishing Protection</h4>
+              <p id="f2-desc">24/7 spam shield</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon-container">🇰🇷</div>
+            <div class="benefit-texts">
+              <h4 id="f3-title">Registration Link</h4>
+              <p id="f3-desc">Auto-registration for foreigners</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-details" class="tab-content">
+          <table class="spec-table">
+            <tr>
+              <td class="spec-label" id="field-base">Base Data</td>
+              <td class="spec-value" id="spec-data">70GB</td>
+            </tr>
+            <tr>
+              <td class="spec-label" id="field-qos">Speed after cap</td>
+              <td class="spec-value" id="spec-qos">1Mbps</td>
+            </tr>
+            <tr>
+              <td class="spec-label" id="field-tether">Tethering</td>
+              <td class="spec-value" id="spec-tethering">45GB</td>
+            </tr>
+            <tr>
+              <td class="spec-label" id="field-calls">Calls</td>
+              <td class="spec-value" id="spec-calls">Unlimited</td>
+            </tr>
+            <tr>
+              <td class="spec-label" id="field-video">Extra Calls</td>
+              <td class="spec-value" id="spec-extra">300m</td>
+            </tr>
+            <tr>
+              <td class="spec-label" id="field-sms">SMS</td>
+              <td class="spec-value" id="spec-sms">Unlimited</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="apply-container" id="apply-container">
+        <button id="modal-apply-btn" class="apply-button-large">Apply Now</button>
+        <form id="apply-form" style="display: none; flex-direction: column; gap: 12px; width: 100%;">
+          <input type="email" id="user-email" placeholder="Your Email (e.g. email@address.com)" required
+            style="padding: 16px; border-radius: 12px; border: 1.5px solid var(--border); font-size: 1rem; outline: none; transition: border-color 0.2s;">
+          <button type="submit" class="apply-button-large" style="margin-top: 0;">Submit Application</button>
+        </form>
+        <div id="apply-success"
+          style="display: none; text-align: center; color: #4f46e5; font-weight: 800; padding: 10px;">
+          ✔️ Thank you! We will contact you soon.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    <p>&copy; 2026 K-Mobile Connect. Optimized for International Students.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

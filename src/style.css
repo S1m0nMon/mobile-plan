@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard+Variable:wght@100..900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #35c5f0;
+  --primary-hover: #29b4db;
+  --bg: #ffffff;
+  --bg-secondary: #f7f9fa;
+  --card-bg: #ffffff;
+  --text: #2f3438;
+  --text-muted: #828c94;
+  --border: #eaedef;
+  --accent: #f05650;
+  --highlight: #35c5f0;
+  --yellow: #ffbb00;
+  --lightning: #7b4cf6;
+  --best-bg: #fffbfb;
+  --best-border: #f05650;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard Variable', 'Outfit', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1156px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -1px;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #424242;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lang-btn.active {
+  color: var(--primary);
+}
+
+main {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.semester-banner {
+  background: linear-gradient(to right, #fff5f5, #fffcf0);
+  padding: 16px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  font-weight: 800;
+  color: #f05650;
+  border: 1px dashed #f05650;
+  font-size: 1.1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: none;
+  color: #424242;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* Lowest Price Badge (Musinsa Style) */
+.lowest-price-guarantee-box {
+  margin-bottom: 40px;
+  background: var(--black);
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lowest-price-guarantee-box h4 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.lowest-price-guarantee-box p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.lowest-tag {
+  background: #f05650;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* Info Banner */
+.info-banner {
+  background: #f0faff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(35, 197, 240, 0.1);
+}
+
+.info-content h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0084aa;
+  margin-bottom: 2px;
+}
+
+.info-content p {
+  font-size: 0.9rem;
+  color: #424242;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: white;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  border-color: var(--primary);
+}
+
+.product-card.is-best {
+  border: 2px solid var(--best-border);
+  background-color: var(--best-bg);
+}
+
+.product-image-container {
+  width: 100%;
+  aspect-ratio: 1.2;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.rank-badge {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 24px;
+  height: 30px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+}
+
+.is-best .rank-badge {
+  background: var(--best-border);
+}
+
+.data-headline {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: white;
+  z-index: 2;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  height: 2.8em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.price-discount {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.is-best .price-discount {
+  color: var(--best-border);
+}
+
+.price-current {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.price-original-striked {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.guarantee-badge {
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.is-best .guarantee-badge {
+  color: var(--best-border);
+}
+
+.tags-row {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.tag-btn {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.tag-btn.semester {
+  background-color: #f0faff;
+  color: #0084aa;
+}
+
+.tag-btn.best {
+  background-color: var(--best-border);
+  color: white;
+}
+
+/* Modal / Detailed View - New Style */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  /* Full height possible on mobile */
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 540px;
+  height: 90vh;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    height: 85vh;
+    border-radius: 24px;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--text);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-inner {
+  padding: 32px 24px;
+}
+
+.modal-header-section h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.modal-header-section p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Pricing Boxes */
+.pricing-display {
+  margin-top: 24px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.original-price-box {
+  color: #bdc3c7;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.arrow-down {
+  margin-left: 12px;
+  color: #bdc3c7;
+  font-size: 1.2rem;
+}
+
+.discounted-price-box {
+  margin-top: 4px;
+}
+
+.guarantee-term {
+  color: #4f46e5;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.final-price-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4f46e5;
+}
+
+/* Tab Selection */
+.modal-tabs {
+  display: flex;
+  margin-top: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px;
+  font-weight: 700;
+  color: #bdc3c7;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #4f46e5;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4f46e5;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding-top: 24px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Features List */
+.benefit-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.benefit-icon-container {
+  width: 48px;
+  height: 48px;
+  background: #f4f6fb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.benefit-texts h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.benefit-texts p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Detail Spec Table */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.spec-table td {
+  padding: 14px 0;
+  font-size: 0.9rem;
+}
+
+.spec-label {
+  color: var(--text-muted);
+}
+
+.spec-value {
+  text-align: right;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.apply-container {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+  z-index: 5;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 60px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+#user-email:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(53, 197, 240, 0.1);
+}
