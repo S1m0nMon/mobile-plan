@@ -77,8 +77,7 @@ function updateContent() {
   elements.infoBannerTitle.textContent = t.airportPickup;
   elements.infoBannerDesc.textContent = t.arrivalGuide;
 
-  elements.modalHeaderTitle.textContent = t.modalHeader;
-  elements.modalSubtitle.textContent = t.modalSubtitle;
+  // Modal Localized UI
   elements.labelSummary.textContent = `${t.data} / ${t.calls} / SMS`;
   elements.labelSpam.textContent = t.spamProtection;
   elements.labelApplied.textContent = t.applied;
@@ -135,9 +134,12 @@ function renderProducts() {
           <div class="price-original-striked">${p.originalPrice.toLocaleString()}₩</div>
           <span class="guarantee-badge">✓ ${t.guarantee}</span>
 
-          <div class="tags-row">
+          <div class="tags-row" style="margin-top: 16px;">
              ${p.isBest ? `<span class="tag-btn best">${t.best}</span>` : ''}
              <span class="tag-btn semester">${t.sale}</span>
+          </div>
+          <div style="font-size: 0.75rem; color: #4f46e5; font-weight: 700; margin-top: 6px;">
+            ✓ ${t.data} ${p.data} + ${t.calls} ${t.unlimited}
           </div>
         </div>
       </div>
@@ -155,6 +157,10 @@ function showDetail(id) {
   selectedPlanId = id;
   const plan = plans.find(p => p.id === id);
   const t = translations[currentLang];
+
+  // Initial Modal Header (Expectation)
+  elements.modalHeaderTitle.textContent = t.modalHeader;
+  elements.modalSubtitle.textContent = t.modalSubtitle;
 
   elements.modalOriginalPrice.textContent = `${plan.originalPrice.toLocaleString()}₩`;
   elements.modalCurrentPrice.textContent = `${plan.price.toLocaleString()}₩`;
@@ -218,37 +224,34 @@ function setupEventListeners() {
   elements.tabDetails.addEventListener('click', () => switchTab('details'));
 
   elements.modalApplyBtn.addEventListener('click', () => {
+    const t = translations[currentLang];
+    // TRIGGER "Sold Out" Effect
+    elements.modalHeaderTitle.innerHTML = `<span style="color: #f05650;">${t.soldOutHeader}</span>`;
+    elements.modalSubtitle.textContent = t.soldOutSubtitle;
+
     elements.modalApplyBtn.style.display = 'none';
     elements.applyForm.style.display = 'flex';
     elements.userEmail.focus();
   });
+
   elements.applyForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = elements.userEmail.value;
     const plan = plans.find(p => p.id === selectedPlanId);
 
-    const submitBtn = elements.applyForm.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn.textContent;
-    submitBtn.textContent = currentLang === 'ko' ? '전송 중...' : 'Sending...';
-    submitBtn.disabled = true;
-
-    // 📊 Google Analytics 커스텀 이벤트 전송
     if (typeof gtag === 'function') {
-      gtag('event', 'notification_request', {
+      gtag('event', 'soldout_notification_request', {
         'plan_id': plan.id,
-        'plan_name': plan.name.en,
-        'user_email': email,
-        'method': 'email_form'
+        'user_email': email
       });
-      console.log("GA Event Sent: notification_request");
     }
 
-    // 성공 피드백
+    const submitBtn = elements.applyForm.querySelector('button[type="submit"]');
+    submitBtn.textContent = '...';
+
     setTimeout(() => {
       elements.applyForm.style.display = 'none';
       elements.applySuccess.style.display = 'block';
-      submitBtn.textContent = originalBtnText;
-      submitBtn.disabled = false;
     }, 800);
   });
 

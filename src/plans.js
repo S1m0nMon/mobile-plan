@@ -93,7 +93,7 @@ export const translations = {
         price: 'Price',
         originalPrice: 'Reg.',
         month: '/ mo',
-        applyNow: 'Get Notified',
+        applyNow: 'Register for this Plan',
         unlimited: 'Unlimited',
         best: 'BEST',
         sale: 'Special',
@@ -101,9 +101,11 @@ export const translations = {
         guarantee: 'Lowest Price for 12 Mo.',
         lowestPriceBadge: "100% Lowest Price Guarantee",
         lowestPriceReason: "If you find a cheaper price for the same spec, we provide a full refund.",
-        modalHeader: "Stay tuned for this plan!",
-        modalSubtitle: "This plan is currently under preparation.",
-        comingSoonDesc: "Leave your email and we will notify you immediately when it's ready for opening.",
+        modalHeader: "Select your SIM type",
+        modalSubtitle: "Choose between USIM and eSIM as you like.",
+        soldOutHeader: "Oops! This plan is sold out.",
+        soldOutSubtitle: "Due to high demand, the new semester special for this plan has closed.",
+        comingSoonDesc: "Leave your email and we'll notify you when it's back!",
         tabs: {
             benefits: "Benefits",
             details: "Plan Specs"
@@ -120,15 +122,15 @@ export const translations = {
         spamProtection: "Spam Block",
         applied: "Applied",
         features: {
-            f1Title: "Student Exclusive Discount",
-            f1Desc: "Save for 1 year with partner benefits",
+            f1Title: "USIM & eSIM Supported",
+            f1Desc: "Compatible with all unlocked devices",
             f2Title: "Real-time Spam Filter",
             f2Desc: "24/7 protection against phishing",
-            f3Title: "Immigration Auto-Link",
-            f3Desc: "Automatic contact registration for stay"
+            f3Title: "Unlimited Calls/SMS",
+            f3Desc: "Stay connected with family and friends"
         },
         close: "Close",
-        successMsg: "✔️ We will notify you as soon as it opens!"
+        successMsg: "✔️ We will notify you back!"
     },
     zh: {
         todayDeal: "开学季特惠",
@@ -141,7 +143,7 @@ export const translations = {
         price: '价格',
         originalPrice: '标准价',
         month: '/ 月',
-        applyNow: '获取开启通知',
+        applyNow: '申请此套装',
         unlimited: '不限量',
         best: '最佳',
         sale: '特惠',
@@ -149,9 +151,11 @@ export const translations = {
         guarantee: '12个月内享受此最低价',
         lowestPriceBadge: "100% 全网最低价保证",
         lowestPriceReason: "若发现同等配置价格更低，我们承诺全额退款。",
-        modalHeader: "敬请期待此套装！",
-        modalSubtitle: "该套装目前正在准备中。",
-        comingSoonDesc: "留下您的邮箱，开通时我们将第一时间通知您。",
+        modalHeader: "请选择您的 SIM 卡类型",
+        modalSubtitle: "USIM 或 eSIM 均可根据您的需求选择。",
+        soldOutHeader: "抱歉！此套装已售罄。",
+        soldOutSubtitle: "由于申请人数众多，本阶段特惠名额已满。",
+        comingSoonDesc: "留下您的邮箱，有名额时我们将第一时间通知您。",
         tabs: {
             benefits: "专享权益",
             details: "套装详情"
@@ -167,15 +171,15 @@ export const translations = {
         },
         applied: "已启用",
         features: {
-            f1Title: "留학생 特惠折扣",
-            f1Desc: "享受为期1年的大幅月费减免",
+            f1Title: "支持 USIM & eSIM",
+            f1Desc: "适用于所有已解锁的智能手机",
             f2Title: "实时垃圾信息拦截",
             f2Desc: "24小时全天候防范电信诈骗",
-            f3Title: "入境自动关联",
-            f3Desc: "自动同步联系方式至申报系统"
+            f3Title: "通话 & 短信不限量",
+            f3Desc: "随时随地畅联无阻"
         },
         close: "关闭",
-        successMsg: "✔️ 开启时我们将立即通知您！"
+        successMsg: "✔️ 有名额时我们将立即通知您！"
     },
     vi: {
         todayDeal: "Khuyến mãi học kỳ mới",
@@ -188,7 +192,7 @@ export const translations = {
         price: 'Giá',
         originalPrice: 'Giá gốc',
         month: '/ tháng',
-        applyNow: 'Nhận thông báo',
+        applyNow: 'Sử dụng gói này',
         unlimited: 'Không giới hạn',
         best: 'TỐT NHẤT',
         sale: 'Ưu đãi',
@@ -196,9 +200,11 @@ export const translations = {
         guarantee: 'Giá thấp nhất trong 12 tháng',
         lowestPriceBadge: "Cam kết giá thấp nhất 100%",
         lowestPriceReason: "Hoàn tiền toàn bộ nếu tìm thấy giá rẻ hơn cho cùng cấu hình.",
-        modalHeader: "Gói cước sắp ra mắt!",
-        modalSubtitle: "Gói cước này hiện đang được chuẩn bị.",
-        comingSoonDesc: "Hãy để lại email, chúng tôi sẽ thông báo cho bạn ngay khi có thể đăng ký.",
+        modalHeader: "Chọn loại SIM của bạn",
+        modalSubtitle: "Hỗ trợ cả USIM và eSIM theo ý muốn của bạn.",
+        soldOutHeader: "Rất tiếc! Gói cước đã hết suất.",
+        soldOutSubtitle: "Do số lượng đăng ký quá lớn, ưu đãi học kỳ mới đã kết thúc.",
+        comingSoonDesc: "Hãy để lại email, chúng tôi sẽ báo cho bạn khi có suất mới!",
         tabs: {
             benefits: "Ưu đãi",
             details: "Chi tiết gói"
@@ -214,15 +220,15 @@ export const translations = {
         },
         applied: "Đang áp dụng",
         features: {
-            f1Title: "Giảm giá học kỳ mới",
-            f1Desc: "Ưu đãi giá rẻ trong vòng 1 năm",
+            f1Title: "Hỗ trợ USIM & eSIM",
+            f1Desc: "Tương thích với mọi dòng máy quốc tế",
             f2Title: "Chặn Spam & Lừa đảo",
             f2Desc: "Bảo vệ thông tin cá nhân 24/7",
-            f3Title: "Tự động kết nối nhập cảnh",
-            f3Desc: "Tự động đăng ký thông tin liên lạc"
+            f3Title: "Gọi & Nhắn tin thả ga",
+            f3Desc: "Không giới hạn kết nối bạn bè"
         },
         close: "Đóng",
-        successMsg: "✔️ Chúng tôi sẽ thông báo cho bạn ngay khi mở đăng ký!"
+        successMsg: "✔️ Chúng tôi sẽ sớm liên hệ lại!"
     },
     ko: {
         todayDeal: "신학기 특가 핫딜",
@@ -235,7 +241,7 @@ export const translations = {
         price: '가격',
         originalPrice: '정가',
         month: '/ 월',
-        applyNow: '오픈 알림 받기',
+        applyNow: '이 요금제로 신청하기',
         unlimited: '무제한',
         best: 'BEST 인기',
         sale: '특가',
@@ -243,11 +249,13 @@ export const translations = {
         guarantee: '12개월 동안 최저가 보장',
         lowestPriceBadge: "100% 최저가 보상제",
         lowestPriceReason: "동일 스펙 기준 최저가가 아닐 경우 무조건 환불해 드립니다.",
-        modalHeader: "이 요금제는 곧 준비될 예정이에요!",
-        modalSubtitle: "현재 요금제 출시를 준비하고 있습니다.",
-        comingSoonDesc: "이메일을 남겨주시면 개통이 가능한 시점에 가장 먼저 알려드릴게요.",
+        modalHeader: "유심 타입을 선택해 주세요",
+        modalSubtitle: "일반 USIM과 eSIM 중 원하는 방식 선택이 가능합니다.",
+        soldOutHeader: "이미 판매가 마감된 플랜입니다.",
+        soldOutSubtitle: "신학기 전용 한정 수량이 모두 소진되어 신청이 조기 종료되었습니다.",
+        comingSoonDesc: "이메일을 남겨주시면 추가 물량 확보 시 알려드릴게요.",
         tabs: {
-            benefits: "혜택",
+            benefits: "공통 혜택",
             details: "요금제 상세"
         },
         fields: {
@@ -262,14 +270,14 @@ export const translations = {
         spamProtection: "스팸 차단",
         applied: "적용",
         features: {
-            f1Title: "협약대학교 전용 할인",
-            f1Desc: "협약대학교 혜택으로 1년간 월 요금 할인",
+            f1Title: "USIM / eSIM 모두 지원",
+            f1Desc: "원하는 방식으로 자유로운 가입 및 개통",
             f2Title: "보이스피싱 실시간 방지",
             f2Desc: "개인정보 유출 차단으로 24시간 활성화",
-            f3Title: "출입국 연락처 자동 연동",
-            f3Desc: "출입국에서 오는 연락을 놓치지 않도록 자동 등록"
+            f3Title: "음성 통화 & 문자 무제한",
+            f3Desc: "추가 요금 걱정 없이 무제한 사용 가능"
         },
         close: "닫기",
-        successMsg: "✔️ 오픈되는 즉시 메일로 알려드릴게요!"
+        successMsg: "✔️ 추가 물량 확보 시 메일로 알려드릴게요!"
     }
 };
